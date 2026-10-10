@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jw1 // signal found</title>
+    <meta name="description" content="The personal arcade, workshop, and field notes of jw1." />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="noise"></div>
+    <div class="scanlines"></div>
+    <header class="topbar">
+      <a class="brand" href="#home" data-route="home" aria-label="jw1 home">
+        <span class="brand-mark">J</span>
+        <span><b>jw1</b><small>personal node / 1997—∞</small></span>
+      </a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#work" data-route="work">work</a>
+        <a href="#archive" data-route="archive">archive</a>
+        <a href="#transmissions" data-route="transmissions">transmissions</a>
+      </nav>
+      <div class="top-actions">
+        <span class="status"><i></i> ONLINE</span>
+        <button class="pixel-button small" data-modal="member-modal">LOG IN <span>↗</span></button>
+      </div>
+    </header>
+
+    <main id="app">
+      <section class="page active" id="home-page" data-page="home">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow"><span>✦</span> independent signal / est. somewhere online</p>
+            <h1>Make something<br /><em>strange.</em></h1>
+            <p class="hero-intro">Games, software, and little worlds built after dark. This is the public side of jw1 — a workbench with the lights still on.</p>
+            <div class="hero-actions">
+              <a class="pixel-button" href="#work" data-route="work">EXPLORE THE WORK <span>→</span></a>
+              <button class="text-button" data-modal="terminal-modal"><span class="play-icon">▶</span> open terminal</button>
+            </div>
+            <div class="hero-meta">
+              <span><b>07</b> active projects</span>
+              <span><b>03</b> field notes</span>
+              <span><b>∞</b> late nights</span>
+            </div>
+          </div>
+          <div class="hero-art">
+            <div class="art-frame">
+              <div class="frame-label">JW1 / SIGNAL-01</div>
+              <img src="source-images\xZyPn.jpg" alt="Pixel art JW1 circuit emblem" />
+              <div class="frame-coordinates">34° 03' 08" N<br />118° 14' 37" W</div>
+              <span class="crosshair one"></span><span class="crosshair two"></span>
+            </div>
+            <div class="float-tag tag-a">NO. 001<br /><b>THE ARCHIVE</b></div>
+            <div class="float-tag tag-b">TRANSMISSION<br /><b>RECEIVED</b> ◉</div>
+          </div>
+        </div>
+        <div class="marquee"><span>RECENTLY UNEARTHED&nbsp;&nbsp; / &nbsp;&nbsp;JAMESTOWN&nbsp;&nbsp; / &nbsp;&nbsp;VOXON&nbsp;&nbsp; / &nbsp;&nbsp;TRAPPIST&nbsp;&nbsp; / &nbsp;&nbsp;KEEP LOOKING&nbsp;&nbsp; / &nbsp;&nbsp;</span></div>
+        <section class="featured-section">
+          <div class="section-heading"><div><p class="eyebrow">01 / current coordinates</p><h2>On the workbench</h2></div><a href="#work" data-route="work" class="arrow-link">view all projects ↗</a></div>
+          <div class="project-grid compact">
+            <article class="project-card accent-orange" data-project="Jamestown">
+              <div class="card-top"><span class="project-index">01</span><span class="project-type">GAME / IN DEV</span></div>
+              <div class="project-visual visual-jamestown"><span>JAMESTOWN</span><i>✦</i></div>
+              <div class="card-content"><h3>Jamestown</h3><p>A place that shouldn't be on any map.</p><div class="card-footer"><span class="language-dot js"></span> JavaScript <span class="separator">·</span> <span class="tiny-status">building</span></div></div>
+            </article>
+            <article class="project-card accent-blue" data-project="Voxon">
+              <div class="card-top"><span class="project-index">02</span><span class="project-type">GAME / PROTOTYPE</span></div>
+              <div class="project-visual visual-voxon"><span>VOXON</span><i>+</i></div>
+              <div class="card-content"><h3>Voxon</h3><p>A space shoot 'em up with a pulse.</p><div class="card-footer"><span class="language-dot ts"></span> TypeScript <span class="separator">·</span> <span class="tiny-status">playable</span></div></div>
+            </article>
+            <article class="project-card accent-purple" data-project="Trappist">
+              <div class="card-top"><span class="project-index">03</span><span class="project-type">TOOL / PRIVATE</span></div>
+              <div class="project-visual visual-trappist"><span>TRAPPIST</span><i>◌</i></div>
+              <div class="card-content"><h3>Trappist</h3><p>A quiet tool for loud ideas.</p><div class="card-footer"><span class="language-dot js"></span> JavaScript <span class="separator">·</span> <span class="tiny-status">in orbit</span></div></div>
+            </article>
+          </div>
+        </section>
+      </section>
+
+      <section class="page" id="work-page" data-page="work">
+        <div class="page-heading"><p class="eyebrow">02 / the workshop</p><h1>Everything is<br /><em>in progress.</em></h1><p>A catalog of experiments, shipped artifacts, and things that are still blinking in the dark.</p></div>
+        <div class="filter-row"><span class="filter-label">FILTER BY /</span><button class="filter active">ALL <b>07</b></button><button class="filter">GAMES <b>03</b></button><button class="filter">TOOLS <b>02</b></button><button class="filter">WORLDS <b>02</b></button></div>
+        <div class="project-grid all-projects">
+          <article class="project-card accent-orange large-card"><div class="card-top"><span class="project-index">01</span><span class="project-type">GAME / IN DEV</span></div><div class="project-visual visual-jamestown"><span>JAMESTOWN</span><i>✦</i></div><div class="card-content"><h3>Jamestown</h3><p>Something arrived before we did.</p><button class="inline-button" data-modal="project-modal">inspect signal →</button></div></article>
+          <article class="project-card accent-blue large-card"><div class="card-top"><span class="project-index">02</span><span class="project-type">GAME / PROTOTYPE</span></div><div class="project-visual visual-voxon"><span>VOXON</span><i>+</i></div><div class="card-content"><h3>Voxon</h3><p>Defend the edge of the known universe.</p><button class="inline-button" data-modal="project-modal">inspect signal →</button></div></article>
+          <article class="project-card accent-purple large-card"><div class="card-top"><span class="project-index">03</span><span class="project-type">TOOL / PRIVATE</span></div><div class="project-visual visual-trappist"><span>TRAPPIST</span><i>◌</i></div><div class="card-content"><h3>Trappist</h3><p>Notes for building better small things.</p><button class="inline-button" data-modal="project-modal">inspect signal →</button></div></article>
+          <article class="project-card accent-green large-card"><div class="card-top"><span class="project-index">04</span><span class="project-type">WORLD / CONCEPT</span></div><div class="project-visual visual-afterlight"><span>AFTERLIGHT</span><i>☼</i></div><div class="card-content"><h3>Afterlight</h3><p>A city that only exists at 03:17.</p><button class="inline-button" data-modal="project-modal">inspect signal →</button></div></article>
+          <article class="project-card accent-pink large-card"><div class="card-top"><span class="project-index">05</span><span class="project-type">TOOL / MAKING</span></div><div class="project-visual visual-ghost"><span>GHOST//KEY</span><i>⌁</i></div><div class="card-content"><h3>Ghost//Key</h3><p>Leave a message for your future self.</p><button class="inline-button" data-modal="project-modal">inspect signal →</button></div></article>
+          <article class="project-card accent-yellow large-card"><div class="card-top"><span class="project-index">06</span><span class="project-type">GAME / SKETCH</span></div><div class="project-visual visual-orbit"><span>ORBITAL 9</span><i>◉</i></div><div class="card-content"><h3>Orbital 9</h3><p>One station. Nine bad decisions.</p><button class="inline-button" data-modal="project-modal">inspect signal →</button></div></article>
+        </div>
+      </section>
+
+      <section class="page" id="archive-page" data-page="archive">
+        <div class="page-heading split-heading"><div><p class="eyebrow">03 / recovered files</p><h1>The<br /><em>archive.</em></h1></div><img src="source-images\l4YUV.jpg" alt="JW1 pixel art border" /></div>
+        <div class="archive-layout"><div class="archive-list">
+          <button class="archive-item active"><span>1997.04.12</span><b>the first boot</b><i>↗</i></button>
+          <button class="archive-item"><span>2004.11.08</span><b>notes from a long night</b><i>↗</i></button>
+          <button class="archive-item"><span>2011.06.30</span><b>an index of small worlds</b><i>↗</i></button>
+          <button class="archive-item"><span>2026.10.10</span><b>signal found</b><i>↗</i></button>
+        </div><div class="archive-detail"><span class="stamp">RECOVERED / FILE 001</span><h2>The first boot</h2><p>There was a blinking cursor, an empty directory, and a very good reason to keep going. The rest is classified as “probably a bug.”</p><div class="detail-line"><span>FORMAT</span><b>plain text / 4 kb</b></div><div class="detail-line"><span>STATUS</span><b class="orange-text">still compiling</b></div><button class="pixel-button" data-modal="archive-modal">READ FILE <span>→</span></button></div></div>
+      </section>
+
+      <section class="page" id="transmissions-page" data-page="transmissions">
+        <div class="page-heading"><p class="eyebrow">04 / from the desk</p><h1>Incoming<br /><em>transmissions.</em></h1><p>Occasional signals from the workshop. No schedule. No promises.</p></div>
+        <div class="transmission-layout"><div class="transmission-list">
+          <article><span class="trans-date">10.10.26</span><div><h3>Signal found</h3><p>The doors are open. The lights are on. Something is moving in Jamestown.</p><a href="#" class="arrow-link">read transmission ↗</a></div><span class="trans-kind">FIELD NOTE</span></article>
+          <article><span class="trans-date">08.29.26</span><div><h3>On making tiny universes</h3><p>Some thoughts on scope, stars, and the joy of a one-screen game.</p><a href="#" class="arrow-link">read transmission ↗</a></div><span class="trans-kind">ESSAY</span></article>
+          <article><span class="trans-date">05.17.26</span><div><h3>Voxon // build 04</h3><p>New enemies. New soundtrack. Same impossible odds.</p><a href="#" class="arrow-link">read transmission ↗</a></div><span class="trans-kind">DEVLOG</span></article>
+        </div><aside class="radio-card"><div class="radio-top"><span>JW1 RADIO</span><span class="live-dot">● LIVE</span></div><div class="waveform"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><h3>late night frequency</h3><p>03:17 — 04:44</p><button class="pixel-button full" data-modal="radio-modal">TUNE IN <span>▶</span></button></aside></div>
+      </section>
+    </main>
+
+    <footer><span>© jw1 / all signals reserved</span><span>built in the in-between <b>✦</b></span><a href="#home" data-route="home">back to top ↑</a></footer>
+
+    <div class="modal-backdrop" id="modal-backdrop" hidden>
+      <div class="modal" id="member-modal" role="dialog" aria-modal="true" aria-labelledby="member-title"><button class="close-modal" aria-label="Close">×</button><p class="eyebrow">JW1 / PRIVATE NODE</p><h2 id="member-title">Enter the<br /><em>workshop.</em></h2><p class="modal-copy">A quiet corner for build notes, strange links, and early access.</p><label>HANDLE<input type="text" placeholder="your alias"></label><label>PASSCODE<input type="password" placeholder="••••••••"></label><button class="pixel-button full submit-modal">ACCESS NODE <span>→</span></button><p class="modal-foot">No account? <button data-modal="register-modal">request an invite</button></p></div>
+      <div class="modal" id="register-modal" role="dialog" aria-modal="true" aria-labelledby="register-title"><button class="close-modal" aria-label="Close">×</button><p class="eyebrow">JW1 / NEW SIGNAL</p><h2 id="register-title">Leave a<br /><em>trace.</em></h2><p class="modal-copy">Drop a handle. The rest can stay mysterious.</p><label>HANDLE<input type="text" placeholder="choose wisely"></label><label>FREQUENCY<input type="email" placeholder="you@somewhere.net"></label><button class="pixel-button full submit-modal">SEND REQUEST <span>↗</span></button><p class="modal-foot">Already in the loop? <button data-modal="member-modal">log in</button></p></div>
+      <div class="modal terminal-modal" id="terminal-modal" role="dialog" aria-modal="true" aria-labelledby="terminal-title"><button class="close-modal" aria-label="Close">×</button><div class="terminal-head"><span><i></i><i></i><i></i></span><b id="terminal-title">jw1@node:~</b></div><div class="terminal-output">JW1 OS [version 1.0.97]<br />All systems nominal.<br /><br /><span class="orange-text">hint:</span> type <b>help</b> to see available commands.</div><div class="terminal-input"><span>guest@jw1:~$</span><input id="terminal-command" autocomplete="off" autofocus /></div></div>
+      <div class="modal project-modal" id="project-modal" role="dialog" aria-modal="true" aria-labelledby="project-title"><button class="close-modal" aria-label="Close">×</button><p class="eyebrow">PROJECT FILE / 001</p><h2 id="project-title">Jamestown</h2><p class="modal-copy">A strange little game about a place that appears on no map. Explore. Listen. Don't follow the lights.</p><div class="detail-line"><span>STATUS</span><b class="orange-text">IN DEVELOPMENT</b></div><div class="detail-line"><span>FIRST SIGNAL</span><b>10.10.2026</b></div><button class="pixel-button full submit-modal">NOTIFY ME <span>↗</span></button></div>
+      <div class="modal archive-modal" id="archive-modal" role="dialog" aria-modal="true" aria-labelledby="archive-title"><button class="close-modal" aria-label="Close">×</button><p class="eyebrow">RECOVERED FILE / 001</p><h2 id="archive-title">The first boot</h2><div class="file-paper"><p>&gt; booting jw1_node...</p><p>&gt; loading impossible_ideas.dll</p><p>&gt; warning: sleep module not found</p><p>&gt; continuing anyway.</p><br /><p>Some projects begin with a plan. This one began with a blinking cursor and a question that refused to go away.</p></div></div>
+      <div class="modal radio-modal" id="radio-modal" role="dialog" aria-modal="true" aria-labelledby="radio-title"><button class="close-modal" aria-label="Close">×</button><p class="eyebrow">JW1 RADIO / 03:17</p><h2 id="radio-title">Frequency<br /><em>connected.</em></h2><div class="big-wave">∿ ∿ ∿ ∿ ∿ ∿ ∿</div><p class="modal-copy">The signal is coming through. Keep this tab open and listen closely.</p><button class="pixel-button full submit-modal">DISCONNECT <span>■</span></button></div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
