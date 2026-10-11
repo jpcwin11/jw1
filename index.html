@@ -6,6 +6,28 @@
     <title>jw1 // signal found</title>
     <meta name="description" content="The personal arcade, workshop, and field notes of jw1." />
     <link rel="stylesheet" href="styles.css" />
+    <style>
+      .strange-dock{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:0 0 36px;max-width:540px}
+      .strange-link{position:relative;display:flex;flex-direction:column;justify-content:space-between;min-height:155px;padding:12px;background:#111521;border:1px solid var(--line);color:var(--ink);overflow:hidden;transition:.2s;box-shadow:4px 4px 0 #171d2c}
+      .strange-link:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0 5px,#fff 6px);opacity:.035;pointer-events:none}
+      .strange-link:hover,.strange-link:focus-visible{transform:translate(2px,2px);border-color:var(--orange);box-shadow:2px 2px 0 var(--blue);outline:none}
+      .strange-link:nth-child(2):hover,.strange-link:nth-child(2):focus-visible{border-color:var(--blue)}
+      .strange-link:nth-child(3):hover,.strange-link:nth-child(3):focus-visible{border-color:var(--purple)}
+      .strange-link:nth-child(4):hover,.strange-link:nth-child(4):focus-visible{border-color:var(--green)}
+      .strange-link:nth-child(5):hover,.strange-link:nth-child(5):focus-visible{border-color:var(--yellow)}
+      .strange-link:nth-child(6):hover,.strange-link:nth-child(6):focus-visible{border-color:var(--pink)}
+      .strange-icon{display:grid;place-items:center;height:82px;color:var(--orange);filter:drop-shadow(3px 3px 0 #5f2e28)}
+      .strange-link:nth-child(2) .strange-icon{color:var(--blue);filter:drop-shadow(3px 3px 0 #173e6b)}
+      .strange-link:nth-child(3) .strange-icon{color:var(--purple);filter:drop-shadow(3px 3px 0 #452d70)}
+      .strange-link:nth-child(4) .strange-icon{color:var(--green);filter:drop-shadow(3px 3px 0 #28543f)}
+      .strange-link:nth-child(5) .strange-icon{color:var(--yellow);filter:drop-shadow(3px 3px 0 #665d24)}
+      .strange-link:nth-child(6) .strange-icon{color:var(--pink);filter:drop-shadow(3px 3px 0 #67304f)}
+      .strange-icon svg{width:70px;height:70px;image-rendering:pixelated}
+      .strange-label{font:9px 'DM Mono';letter-spacing:.08em;color:var(--muted);line-height:1.4}
+      .strange-label b{display:block;color:var(--ink);font-size:10px}
+      .game-page{max-width:1180px}.game-heading{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:24px}.game-heading h1{margin:12px 0 0;font-size:clamp(36px,5vw,68px);line-height:.94;letter-spacing:-.06em}.game-heading p:last-child{max-width:300px;color:var(--muted);line-height:1.6}.game-shell{border:1px solid var(--line);background:#080b10;box-shadow:10px 10px 0 #121a28}.game-hud{display:flex;justify-content:space-between;gap:20px;padding:12px 15px;border-bottom:1px solid var(--line);font:10px 'DM Mono';color:var(--muted);letter-spacing:.08em}.game-hud b{color:var(--ink);font-weight:500}.game-view{position:relative;min-height:440px;overflow:hidden;display:grid;place-items:center;isolation:isolate}.game-controls{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:14px 15px;border-top:1px solid var(--line);font:10px 'DM Mono';color:var(--muted)}.game-button{background:none;border:1px solid currentColor;color:var(--orange);padding:9px 12px;font:10px 'DM Mono';letter-spacing:.08em}.game-button:hover,.game-button:focus-visible{background:var(--orange);color:#140f0c;outline:none}.vector-view{background:#020b0c;color:#7bffbe;perspective:560px}.vector-view:before{content:"";position:absolute;inset:0;background:linear-gradient(#021112 0 49%,#031719 50%);z-index:-2}.vector-grid{position:absolute;width:150%;height:100%;bottom:-45%;background:linear-gradient(90deg,transparent 49%,currentColor 50% 51%,transparent 52%) 0 0/11% 100%,linear-gradient(0deg,transparent 49%,currentColor 50% 51%,transparent 52%) 0 0/100% 12%;opacity:.28;transform:rotateX(62deg);transform-origin:bottom}.vector-gate{width:min(54vw,440px);height:275px;border:3px solid currentColor;clip-path:polygon(18% 0,82% 0,100% 100%,0 100%);box-shadow:0 0 35px #40e89b66, inset 0 0 28px #40e89b33;position:relative}.vector-gate:before,.vector-gate:after{content:"";position:absolute;border:2px solid currentColor;inset:22% 23% 0;clip-path:inherit;opacity:.75}.vector-gate:after{inset:42% 39% 0}.game-objective{position:absolute;top:28px;left:28px;font:11px 'DM Mono';letter-spacing:.08em}.game-objective b{display:block;margin-top:5px;font-size:16px}.pixel-view{background:#20100c;perspective:450px;color:#ffc24d}.pixel-view:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,#3c1c12 0 5px,#28120e 6px 11px);opacity:.78}.pixel-corridor{width:min(76vw,660px);height:430px;position:relative;transform:rotateX(4deg);background:linear-gradient(90deg,#110a0a 0 18%,transparent 18% 82%,#110a0a 82%),linear-gradient(#db6c2e 0 12%,#762d1e 12% 62%,#30212a 62%);clip-path:polygon(18% 0,82% 0,100% 100%,0 100%);border:5px solid #f09c3e;box-shadow:0 0 0 5px #3d1a13,inset 0 0 50px #170b0b}.pixel-corridor:before{content:"";position:absolute;inset:14% 38% 25%;background:repeating-linear-gradient(90deg,#722e1f 0 12px,#d65d28 12px 20px);border:4px solid #ffbc4a;box-shadow:0 0 0 4px #39140e}.pixel-orb{position:absolute;width:42px;height:42px;border-radius:50%;background:#e9d2a5;box-shadow:0 0 0 7px #7a2e1a,0 0 24px #ffbd45;left:calc(50% - 21px);top:45%;animation:orb-bob 2s steps(2) infinite}.neon-view{background:#071021;color:#51d9ff;perspective:600px}.neon-view:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 27%,#6c3aa855,transparent 27%),linear-gradient(#0a1128 0 49%,#100c2d 50%);z-index:-2}.neon-road{position:absolute;bottom:-39%;width:150%;height:88%;background:linear-gradient(90deg,transparent 49%,currentColor 50% 51%,transparent 52%) 0 0/10% 100%,linear-gradient(0deg,transparent 49%,currentColor 50% 51%,transparent 52%) 0 0/100% 12%;opacity:.38;transform:rotateX(63deg);transform-origin:bottom}.neon-portal{width:min(63vw,520px);height:290px;border:4px solid currentColor;clip-path:polygon(50% 0,100% 26%,86% 100%,14% 100%,0 26%);box-shadow:0 0 25px #45d9ff88,inset 0 0 32px #482da866;position:relative}.neon-portal:before{content:"";position:absolute;inset:19% 20%;border:3px solid #de7cff;clip-path:inherit;box-shadow:0 0 16px #de7cff}.neon-portal:after{content:"";position:absolute;width:24%;aspect-ratio:1;border:3px solid #f3d659;left:38%;top:40%;transform:rotate(45deg);box-shadow:0 0 18px #f3d659}@keyframes orb-bob{50%{transform:translateY(-9px)}}@media(max-width:620px){.game-heading{display:block}.game-view{min-height:330px}.game-controls{align-items:flex-start;flex-direction:column}.game-objective{top:17px;left:17px}.vector-gate,.pixel-corridor,.neon-portal{width:82vw}}
+      @media(max-width:620px){.strange-dock{max-width:none}.strange-link{min-height:140px;padding:9px}.strange-icon{height:72px}.strange-icon svg{width:60px;height:60px}}
+    </style>
   </head>
   <body>
     <div class="noise"></div>
@@ -30,9 +52,81 @@
       <section class="page active" id="home-page" data-page="home">
         <div class="hero-grid">
           <div class="hero-copy">
-            <p class="eyebrow"><span>✦</span> independent signal / est. somewhere online</p>
-            <h1>Make something<br /><em>strange.</em></h1>
-            <p class="hero-intro">Games, software, and little worlds built after dark. This is the public side of jw1 — a workbench with the lights still on.</p>
+            <div class="strange-dock" aria-label="Strange user interfaces">
+              <a class="strange-link" href="https://www.windows93.net/" target="_blank" rel="noopener noreferrer" aria-label="Open Windows 93 strange user interface">
+                <span class="strange-icon" aria-hidden="true">
+                  <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="square" shape-rendering="crispEdges">
+                    <path d="M8 16h48v34H8zM8 24h48M16 20h1M22 20h1M28 20h1" />
+                    <path d="M18 34h10v10H18zM36 31h12v4H36M36 39h8v4h-8" />
+                  </svg>
+                </span>
+                <span class="strange-label"><b>WINDOWS 93</b>boot the impossible ↗</span>
+              </a>
+              <a class="strange-link" href="https://pointerpointer.com/" target="_blank" rel="noopener noreferrer" aria-label="Open Pointer Pointer strange user interface">
+                <span class="strange-icon" aria-hidden="true">
+                  <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="square" shape-rendering="crispEdges">
+                    <path d="M32 8v48M8 32h48M17 17l30 30M47 17L17 47" />
+                    <path d="M27 23l17 6-11 4-4 11-2-21z" fill="currentColor" stroke="none" />
+                  </svg>
+                </span>
+                <span class="strange-label"><b>POINTER POINTER</b>find your twin ↗</span>
+              </a>
+              <a class="strange-link" href="https://theuselessweb.com/" target="_blank" rel="noopener noreferrer" aria-label="Open The Useless Web strange user interface">
+                <span class="strange-icon" aria-hidden="true">
+                  <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="square" shape-rendering="crispEdges">
+                    <path d="M8 14h48v36H8zM8 23h48M15 18h1M21 18h1M27 18h1" />
+                    <path d="M20 34h24v8H20zM25 30v-5M39 30v-5M32 34v8" />
+                  </svg>
+                </span>
+                <span class="strange-label"><b>USELESS WEB</b>press the button ↗</span>
+              </a>
+              <a class="strange-link" href="https://playsnake.org/" target="_blank" rel="noopener noreferrer" aria-label="Play Snake in a browser">
+                <span class="strange-icon" aria-hidden="true">
+                  <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="square" shape-rendering="crispEdges">
+                    <path d="M12 18h10v10H12zM22 28h10v10H22zM32 38h10v10H32zM42 28h10v10H42z" />
+                    <path d="M48 18h4v10h-4z" fill="currentColor" />
+                    <path d="M14 48h4" />
+                  </svg>
+                </span>
+                <span class="strange-label"><b>SNAKE</b>eat the pixels ↗</span>
+              </a>
+              <a class="strange-link" href="https://play2048.co/" target="_blank" rel="noopener noreferrer" aria-label="Play 2048 in a browser">
+                <span class="strange-icon" aria-hidden="true">
+                  <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="square" shape-rendering="crispEdges">
+                    <path d="M10 10h18v18H10zM36 10h18v18H36zM10 36h18v18H10zM36 36h18v18H36z" />
+                    <path d="M16 19h6M42 19h6M16 45h6M42 45h6" />
+                  </svg>
+                </span>
+                <span class="strange-label"><b>2048</b>merge the numbers ↗</span>
+              </a>
+              <a class="strange-link" href="https://www.crazygames.com/" target="_blank" rel="noopener noreferrer" aria-label="Open a browser mini-game collection">
+                <span class="strange-icon" aria-hidden="true">
+                  <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="square" shape-rendering="crispEdges">
+                    <path d="M10 12h16v16H10zM30 12h24v10H30zM18 34h18v18H18zM40 28h14v24H40z" />
+                    <path d="M16 20h4M36 17h8M24 43h6M46 40h4" />
+                  </svg>
+                </span>
+                <span class="strange-label"><b>BLOCK//SHIFT</b>move the pieces ↗</span>
+              </a>
+              <a class="strange-link" href="#green-horizon" data-route="green-horizon" aria-label="Open Green Horizon game">
+                <span class="strange-icon" aria-hidden="true">
+                  <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="square" shape-rendering="crispEdges"><path d="M8 52 32 12l24 40M18 52l14-24 14 24M32 12v40" /><path d="M8 56h48" /></svg>
+                </span>
+                <span class="strange-label"><b>GREEN HORIZON</b>vector maze ↗</span>
+              </a>
+              <a class="strange-link" href="#sunken-switch" data-route="sunken-switch" aria-label="Open Sunken Switch game">
+                <span class="strange-icon" aria-hidden="true">
+                  <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="square" shape-rendering="crispEdges"><path d="M8 12h48v40H8zM18 22h28v20H18zM32 22v20M18 32h28" /><circle cx="32" cy="32" r="5" fill="currentColor" /></svg>
+                </span>
+                <span class="strange-label"><b>SUNKEN SWITCH</b>pixel corridors ↗</span>
+              </a>
+              <a class="strange-link" href="#violet-arc" data-route="violet-arc" aria-label="Open Violet Arc game">
+                <span class="strange-icon" aria-hidden="true">
+                  <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="square" shape-rendering="crispEdges"><path d="m32 7 20 12v26L32 57 12 45V19zM32 7v50M12 19l40 26M52 19 12 45" /></svg>
+                </span>
+                <span class="strange-label"><b>VIOLET ARC</b>neon passage ↗</span>
+              </a>
+            </div>
             <div class="hero-actions">
               <a class="pixel-button" href="#work" data-route="work">EXPLORE THE WORK <span>→</span></a>
               <button class="text-button" data-modal="terminal-modal"><span class="play-icon">▶</span> open terminal</button>
