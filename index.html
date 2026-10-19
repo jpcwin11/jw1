@@ -6,6 +6,7 @@
     <title>jw1 // signal found</title>
     <meta name="description" content="The personal arcade, workshop, and field notes of jw1." />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="eras.css" />
     <style>
       .strange-dock{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:0 0 36px;max-width:540px}
       .strange-link{position:relative;display:flex;flex-direction:column;justify-content:space-between;min-height:155px;padding:12px;background:#111521;border:1px solid var(--line);color:var(--ink);overflow:hidden;transition:.2s;box-shadow:4px 4px 0 #171d2c}
@@ -39,6 +40,7 @@
       </a>
       <nav class="main-nav" aria-label="Main navigation">
         <a href="#work" data-route="work">work</a>
+        <a href="#eras" data-route="eras">time machine</a>
         <a href="#archive" data-route="archive">archive</a>
         <a href="#transmissions" data-route="transmissions">transmissions</a>
       </nav>
@@ -129,6 +131,7 @@
             </div>
             <div class="hero-actions">
               <a class="pixel-button" href="#work" data-route="work">EXPLORE THE WORK <span>→</span></a>
+              <a class="eras-home-link" href="#eras" data-route="eras">BROWSE THE ERAS <span>↗</span></a>
               <button class="text-button" data-modal="terminal-modal"><span class="play-icon">▶</span> open terminal</button>
             </div>
             <div class="hero-meta">
@@ -171,6 +174,63 @@
         </section>
       </section>
 
+      <section class="page era-directory" id="eras-page" data-page="eras">
+        <div class="era-directory-head"><p class="eyebrow">05 / browser time machine</p><h1>Eight eras.<br /><em>Eight experiments.</em></h1><p>Travel through the web as it was, might have been, or was still waiting to be imagined.</p></div>
+        <div class="era-directory-grid">
+          <a class="era-index era-index-2010" href="#era-2010" data-route="era-2010"><span>2010—2019 / SOCIAL WEB</span><b>Little Status</b><small>Post a thought to the live feed.</small><i>OPEN SIGNAL ↗</i></a>
+          <a class="era-index era-index-2000" href="#era-2000" data-route="era-2000"><span>2000—2009 / ARCADE PORTAL</span><b>Pixel Sprint</b><small>Run, jump, and make the high score.</small><i>INSERT COIN ↗</i></a>
+          <a class="era-index era-index-1990" href="#era-1990" data-route="era-1990"><span>1990—1999 / PERSONAL HOMEPAGE</span><b>Comet Club</b><small>Find the runaway guestbook comet.</small><i>ENTER SITE ↗</i></a>
+          <a class="era-index era-index-1980" href="#era-1980" data-route="era-1980"><span>1980—1989 / BULLETIN BOARD</span><b>Night Terminal</b><small>Find the right frequency and unlock the board.</small><i>DIAL IN ↗</i></a>
+          <a class="era-index era-index-1970" href="#era-1970" data-route="era-1970"><span>1970—1979 / PACKET NETWORK</span><b>Route 04</b><small>Carry a message across a fragile network.</small><i>TRACE ROUTE ↗</i></a>
+          <a class="era-index era-index-1960" href="#era-1960" data-route="era-1960"><span>1960—1969 / HYPERTEXT DREAM</span><b>Memex Garden</b><small>Follow a chain of linked ideas.</small><i>FOLLOW A LINK ↗</i></a>
+          <a class="era-index era-index-1950" href="#era-1950" data-route="era-1950"><span>1950—1959 / PUNCHED-CARD WEB?</span><b>Card Reader</b><small>Turn seven holes into a letter.</small><i>READ THE CARD ↗</i></a>
+          <a class="era-index era-index-1940" href="#era-1940" data-route="era-1940"><span>1940—1949 / MECHANICAL NETWORK?</span><b>Rotor Room</b><small>Set the wheels and encode a message.</small><i>START MACHINE ↗</i></a>
+        </div>
+        <p class="era-footnote">The 1990s and 2000s draw from the early public web. The earlier stops are imaginative prototypes, not claims that the web existed yet.</p>
+      </section>
+
+      <section class="page era-page era-2010" data-page="era-2010">
+        <a class="era-back" href="#eras" data-route="eras">← ALL ERAS</a>
+        <div class="era-lead"><p class="era-kicker">2010—2019 / THE SOCIAL WEB</p><h1>Small thoughts,<br /><em>big timeline.</em></h1><p>A little corner of the feed. Leave a status and watch it join the stream.</p></div>
+        <div class="social-window"><div class="social-bar"><span>little status</span><span>HOME　DISCOVER　✉</span><b>●</b></div><div class="social-layout"><aside class="social-profile"><div class="profile-stamp">J</div><h2>juniper.wav</h2><p>collecting tiny moments<br />and browser tabs</p><span>128 followers</span><button type="button" data-era-action="follow">FOLLOW</button></aside><div class="social-stream"><div class="stream-head"><b>YOUR TIMELINE</b><span>just now</span></div><form class="status-form" data-era-form="post"><label for="status-text">What is happening?</label><textarea id="status-text" maxlength="120" placeholder="The internet feels small today..." required></textarea><div><span>120 characters max</span><button type="submit">POST STATUS</button></div></form><div class="status-feed" data-status-feed aria-live="polite"><article class="status-post"><b>juniper.wav</b><time>2 min ago</time><p>Found a page that plays rain sounds for an empty room. Staying a while.</p><span>♡ 14　 ↗ share</span></article><article class="status-post"><b>pixelmoss</b><time>18 min ago</time><p>Today's goal: close at least three of the 42 tabs I have open.</p><span>♡ 08　 ↗ share</span></article></div></div></div></div>
+      </section>
+
+      <section class="page era-page era-2000" data-page="era-2000">
+        <a class="era-back" href="#eras" data-route="eras">← BACK TO THE DIRECTORY</a>
+        <div class="arcade-brand"><span>★ FREE WEB ARCADE ★</span><h1>PIXEL<br />SPRINT!</h1><p>NO DOWNLOAD • NO SIGN-UP • ALL THRILLS</p></div>
+        <div class="arcade-layout"><aside class="arcade-side"><div class="arcade-ad">YOUR AD<br />HERE!</div><h2>PLAYER ONE</h2><p>Dash through the neon ruins. Jump over the broken pixels.</p><div class="arcade-score">SCORE <b data-arcade-score>000</b></div><button type="button" data-era-action="arcade-reset">NEW GAME</button></aside><div class="arcade-cabinet"><div class="cabinet-top"><span>INSERT COIN TO BEGIN</span><span>BEST: 090</span></div><div class="arcade-screen"><div class="arcade-sky"><span>☼</span><b>PIXEL SPRINT</b></div><div class="arcade-track" data-arcade-track aria-label="Game track"></div><p data-arcade-message aria-live="polite">Ready, player one? Run to move. Jump to clear gaps.</p></div><div class="arcade-controls"><button type="button" data-era-action="arcade-run">RUN ▶</button><button type="button" data-era-action="arcade-jump">JUMP ↑</button></div></div></div>
+      </section>
+
+      <section class="page era-page era-1990" data-page="era-1990">
+        <a class="era-back" href="#eras" data-route="eras">← BACK TO THE DIRECTORY</a>
+        <div class="home-page-frame"><header class="home-page-header"><span>✦ WELCOME TO ✦</span><h1>THE COMET CLUB</h1><p>EST. 1997　|　BEST VIEWED AT 800 × 600</p></header><div class="home-page-columns"><aside class="webring"><b>LINK RING</b><p>← previous</p><p>random site</p><p>next →</p><hr /><b>VISITORS</b><div class="visitor-count" data-visitor-count>000173</div><p>you are visitor #173!</p></aside><div class="comet-content"><h2>Greetings, earthling!</h2><p>This page is under perpetual construction. A comet escaped from the guestbook and is hiding in one of these star fields. Click around and help bring it home.</p><div class="star-field" data-comet-field aria-label="Comet search grid"><button type="button" data-comet-tile aria-label="Search star 1">✦</button><button type="button" data-comet-tile aria-label="Search star 2">✧</button><button type="button" data-comet-tile aria-label="Search star 3">✦</button><button type="button" data-comet-tile aria-label="Search star 4">✧</button><button type="button" data-comet-tile aria-label="Search star 5">✦</button><button type="button" data-comet-tile aria-label="Search star 6">✧</button><button type="button" data-comet-tile aria-label="Search star 7">✦</button><button type="button" data-comet-tile aria-label="Search star 8">✧</button><button type="button" data-comet-tile aria-label="Search star 9">✦</button></div><p class="comet-message" data-comet-message aria-live="polite">The telescope is ready. Find the comet!</p><button class="comet-reset" type="button" data-era-action="comet-reset">RESET TELESCOPE</button><div class="guestbook-strip">SIGN MY GUESTBOOK　✉　EMAIL ME　★　TAKE MY WEBRING BADGE</div></div></div><footer class="home-page-footer">Made with care and too many animated GIFs　|　No frames were harmed</footer></div>
+      </section>
+
+      <section class="page era-page era-1980" data-page="era-1980">
+        <a class="era-back" href="#eras" data-route="eras">← EXIT TO THE DIRECTORY</a>
+        <div class="bbs-heading"><span>MODEM LINK / 2400 BAUD</span><b>OPEN ACCESS NODE</b></div><div class="bbs-screen"><div class="bbs-logo">NIGHT<br />TERMINAL</div><p>╔══════════════════════════════════════════════╗<br />║　WELCOME, TRAVELER. ONE BOARD IS WAITING.　║<br />╚══════════════════════════════════════════════╝</p><p data-bbs-output aria-live="polite">The signal is weak. Scan the line, tune to the board's frequency, then open the connection.<br />Type <b>HELP</b> if you need the command list.</p><form class="bbs-input" data-era-form="bbs"><label for="bbs-command">GUEST@NIGHTBBS:~$</label><input id="bbs-command" name="command" autocomplete="off" placeholder="type a command" /><button type="submit">SEND</button></form><div class="bbs-status"><span>NODE: 03</span><span>USERS ONLINE: 04</span><span>LINE NOISE: LOW</span></div></div>
+      </section>
+
+      <section class="page era-page era-1970" data-page="era-1970">
+        <a class="era-back" href="#eras" data-route="eras">← DISCONNECT</a>
+        <div class="network-head"><p>INTER-NODE TEST / 1974 (IMAGINED)</p><h1>ROUTE 04</h1><span>MESSAGE: “HELLO, OTHER SIDE”</span></div><div class="packet-layout"><div class="packet-map"><div class="map-label">AVAILABLE NODES / SELECT THE NEXT HOP</div><div class="node-grid"><button type="button" data-packet-node="A">A<small>ORIGIN</small></button><button type="button" data-packet-node="B">B<small>RELAY</small></button><button type="button" data-packet-node="C">C<small>RELAY</small></button><button type="button" data-packet-node="D">D<small>RELAY</small></button><button type="button" data-packet-node="E">E<small>RELAY</small></button><button type="button" data-packet-node="F">F<small>DESTINATION</small></button></div></div><aside class="packet-console"><span>PACKET STATUS</span><b data-packet-status aria-live="polite">READY AT NODE A</b><p>Find a path from A to F. The clear route is A → C → E → F.</p><div data-packet-trace>TRACE: A</div><button type="button" data-era-action="packet-reset">RESET ROUTE</button></aside></div>
+      </section>
+
+      <section class="page era-page era-1960" data-page="era-1960">
+        <a class="era-back" href="#eras" data-route="eras">← RETURN TO INDEX</a>
+        <div class="hypertext-header"><span>HYPERTEXT RESEARCH / EXPERIMENT 01</span><h1>THE MEMEX<br /><em>GARDEN</em></h1><p>A speculative web of linked thoughts, imagined before the public internet.</p></div><div class="hypertext-desk"><aside class="hypertext-index"><b>INDEX OF ASSOCIATIONS</b><span>01 / memory</span><span>02 / paths</span><span>03 / machine</span><span data-story-trail>TRAIL: NONE</span></aside><article class="hypertext-card"><span data-story-label>ENTRY 01 / A MEMORY</span><h2 data-story-title>The desk by the window</h2><p data-story-copy>A thought leaves a faint trail. Follow it and it may lead somewhere no index could predict.</p><div class="hypertext-links" data-story-links><button type="button" data-story-choice="thread">Follow the thread →</button><button type="button" data-story-choice="footnote">Open the footnote →</button><button type="button" data-story-choice="index">Return to the index</button></div></article></div>
+      </section>
+
+      <section class="page era-page era-1950" data-page="era-1950">
+        <a class="era-back" href="#eras" data-route="eras">← BACK TO THE DIRECTORY</a>
+        <div class="punch-heading"><p>FUTURE COMMUNICATIONS LAB / SPECULATIVE 1955</p><h1>THE CARD<br /><em>READER</em></h1><span>ONE CARD. SEVEN BITS. A LETTER AT THE OTHER END.</span></div><div class="punch-machine"><div class="machine-label"><span>TELETYPE LINK / UNIT 07</span><span>READY ●</span></div><div class="punch-body"><div class="punch-slots" data-card-bits><button type="button" data-bit-index="0" aria-pressed="true">1</button><button type="button" data-bit-index="1" aria-pressed="false">0</button><button type="button" data-bit-index="2" aria-pressed="false">0</button><button type="button" data-bit-index="3" aria-pressed="false">0</button><button type="button" data-bit-index="4" aria-pressed="false">0</button><button type="button" data-bit-index="5" aria-pressed="false">0</button><button type="button" data-bit-index="6" aria-pressed="true">1</button></div><div class="card-printout"><span>TRANSMITTED CHARACTER</span><b data-card-result>A</b><small data-card-code>1000001 / DECIMAL 65</small></div></div><p class="punch-instruction">Toggle the holes, then read the card as a 7-bit character code.</p><button class="punch-read" type="button" data-era-action="read-card">READ CARD ↓</button></div>
+      </section>
+
+      <section class="page era-page era-1940" data-page="era-1940">
+        <a class="era-back" href="#eras" data-route="eras">← RETURN TO THE DIRECTORY</a>
+        <div class="rotor-heading"><span>FIELD MESSAGE SERVICE / FICTIONAL 1943</span><h1>ROTOR<br />ROOM</h1><p>A mechanical cipher, reimagined as a tiny communication network.</p></div><div class="rotor-machine"><div class="rotor-top"><span>INPUT DRUM</span><span>OUTPUT TAPE</span></div><div class="rotor-body"><label for="rotor-message">MESSAGE TO ENCODE<input id="rotor-message" type="text" value="MEET AT THE LIGHTHOUSE" maxlength="60" /></label><div class="rotor-setting"><label for="rotor-shift">ROTOR SETTING</label><input id="rotor-shift" type="number" min="1" max="25" value="3" /><span>CLICK / STEP</span></div><button type="button" data-era-action="encode-message">TURN THE WHEELS →</button><div class="rotor-output"><span>ENCODED MESSAGE</span><b data-rotor-output aria-live="polite">PRESSURE TAPE AWAITS</b></div></div><p class="rotor-note">For play, not secrecy: this simple letter shift is not secure encryption.</p></div>
+      </section>
+
       <section class="page" id="work-page" data-page="work">
         <div class="page-heading"><p class="eyebrow">02 / the workshop</p><h1>Everything is<br /><em>in progress.</em></h1><p>A catalog of experiments, shipped artifacts, and things that are still blinking in the dark.</p></div>
         <div class="filter-row"><span class="filter-label">FILTER BY /</span><button class="filter active">ALL <b>07</b></button><button class="filter">GAMES <b>03</b></button><button class="filter">TOOLS <b>02</b></button><button class="filter">WORLDS <b>02</b></button></div>
@@ -210,10 +270,11 @@
       <div class="modal" id="member-modal" role="dialog" aria-modal="true" aria-labelledby="member-title"><button class="close-modal" aria-label="Close">×</button><p class="eyebrow">JW1 / PRIVATE NODE</p><h2 id="member-title">Enter the<br /><em>workshop.</em></h2><p class="modal-copy">A quiet corner for build notes, strange links, and early access.</p><label>HANDLE<input type="text" placeholder="your alias"></label><label>PASSCODE<input type="password" placeholder="••••••••"></label><button class="pixel-button full submit-modal">ACCESS NODE <span>→</span></button><p class="modal-foot">No account? <button data-modal="register-modal">request an invite</button></p></div>
       <div class="modal" id="register-modal" role="dialog" aria-modal="true" aria-labelledby="register-title"><button class="close-modal" aria-label="Close">×</button><p class="eyebrow">JW1 / NEW SIGNAL</p><h2 id="register-title">Leave a<br /><em>trace.</em></h2><p class="modal-copy">Drop a handle. The rest can stay mysterious.</p><label>HANDLE<input type="text" placeholder="choose wisely"></label><label>FREQUENCY<input type="email" placeholder="you@somewhere.net"></label><button class="pixel-button full submit-modal">SEND REQUEST <span>↗</span></button><p class="modal-foot">Already in the loop? <button data-modal="member-modal">log in</button></p></div>
       <div class="modal terminal-modal" id="terminal-modal" role="dialog" aria-modal="true" aria-labelledby="terminal-title"><button class="close-modal" aria-label="Close">×</button><div class="terminal-head"><span><i></i><i></i><i></i></span><b id="terminal-title">jw1@node:~</b></div><div class="terminal-output">JW1 OS [version 1.0.97]<br />All systems nominal.<br /><br /><span class="orange-text">hint:</span> type <b>help</b> to see available commands.</div><div class="terminal-input"><span>guest@jw1:~$</span><input id="terminal-command" autocomplete="off" autofocus /></div></div>
-      <div class="modal project-modal" id="project-modal" role="dialog" aria-modal="true" aria-labelledby="project-title"><button class="close-modal" aria-label="Close">×</button><p class="eyebrow">PROJECT FILE / 001</p><h2 id="project-title">Jamestown</h2><p class="modal-copy">A strange little game about a place that appears on no map. Explore. Listen. Don't follow the lights.</p><div class="detail-line"><span>STATUS</span><b class="orange-text">IN DEVELOPMENT</b></div><div class="detail-line"><span>FIRST SIGNAL</span><b>10.10.2026</b></div><button class="pixel-button full submit-modal">NOTIFY ME <span>↗</span></button></div>
+      <div class="modal project-modal" id="project-modal" role="dialog" aria-modal="true" aria-labelledby="project-title"><button class="close-modal" aria-label="Close">×</button><p class="eyebrow" id="project-file-label">PROJECT FILE / 001</p><h2 id="project-title">Jamestown</h2><p class="modal-copy" id="project-copy">A strange little game about a place that appears on no map. Explore. Listen. Don't follow the lights.</p><div class="detail-line"><span>TYPE</span><b id="project-category">GAME</b></div><div class="detail-line"><span>STATUS</span><b class="orange-text" id="project-status">IN DEV</b></div><button class="pixel-button full submit-modal">NOTIFY ME <span>↗</span></button></div>
       <div class="modal archive-modal" id="archive-modal" role="dialog" aria-modal="true" aria-labelledby="archive-title"><button class="close-modal" aria-label="Close">×</button><p class="eyebrow">RECOVERED FILE / 001</p><h2 id="archive-title">The first boot</h2><div class="file-paper"><p>&gt; booting jw1_node...</p><p>&gt; loading impossible_ideas.dll</p><p>&gt; warning: sleep module not found</p><p>&gt; continuing anyway.</p><br /><p>Some projects begin with a plan. This one began with a blinking cursor and a question that refused to go away.</p></div></div>
       <div class="modal radio-modal" id="radio-modal" role="dialog" aria-modal="true" aria-labelledby="radio-title"><button class="close-modal" aria-label="Close">×</button><p class="eyebrow">JW1 RADIO / 03:17</p><h2 id="radio-title">Frequency<br /><em>connected.</em></h2><div class="big-wave">∿ ∿ ∿ ∿ ∿ ∿ ∿</div><p class="modal-copy">The signal is coming through. Keep this tab open and listen closely.</p><button class="pixel-button full submit-modal">DISCONNECT <span>■</span></button></div>
     </div>
     <script src="script.js"></script>
+    <script src="eras.js"></script>
   </body>
 </html>

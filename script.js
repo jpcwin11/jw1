@@ -10,7 +10,18 @@ function showPage(route) {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-function openModal(id) {
+function openModal(id, trigger) {
+  if (id === 'project-modal' && trigger) {
+    const card = trigger.closest('.project-card');
+    if (card) {
+      const projectType = card.querySelector('.project-type').textContent.split('/').map(part => part.trim());
+      document.querySelector('#project-file-label').textContent = `PROJECT FILE / ${card.querySelector('.project-index').textContent}`;
+      document.querySelector('#project-title').textContent = card.querySelector('h3').textContent;
+      document.querySelector('#project-copy').textContent = card.querySelector('.card-content p').textContent;
+      document.querySelector('#project-category').textContent = projectType[0];
+      document.querySelector('#project-status').textContent = projectType[1];
+    }
+  }
   backdrop.hidden = false;
   modals.forEach(modal => modal.classList.toggle('open', modal.id === id));
   const input = document.querySelector(`#${id} input`);
@@ -31,7 +42,7 @@ document.addEventListener('click', event => {
     showPage(route.dataset.route);
   }
   const modalTrigger = event.target.closest('[data-modal]');
-  if (modalTrigger) openModal(modalTrigger.dataset.modal);
+  if (modalTrigger) openModal(modalTrigger.dataset.modal, modalTrigger);
   if (event.target.closest('.close-modal') || event.target === backdrop) closeModal();
   if (event.target.closest('.submit-modal')) {
     const button = event.target.closest('.submit-modal');
