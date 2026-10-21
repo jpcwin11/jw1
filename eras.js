@@ -85,6 +85,18 @@ function updatePacketStatus(message) {
   });
 }
 
+function renderHomepage() {
+  const title = document.querySelector('#homepage-title').value.trim() || 'Untitled Home Page';
+  const intro = document.querySelector('#homepage-intro').value.trim() || 'Welcome to my little corner of the web.';
+  const preview = document.querySelector('[data-home-preview]');
+  const activeTheme = document.querySelector('[data-home-theme][aria-pressed="true"]');
+  document.querySelector('[data-preview-title]').textContent = title;
+  document.querySelector('[data-preview-copy]').textContent = intro;
+  document.querySelector('[data-preview-counter]').hidden = !document.querySelector('#homepage-counter').checked;
+  document.querySelector('[data-preview-marquee]').hidden = !document.querySelector('#homepage-marquee').checked;
+  preview.dataset.theme = activeTheme ? activeTheme.dataset.homeTheme : 'blue';
+}
+
 function handleEraAction(action, button) {
   if (action === 'follow') {
     const following = button.dataset.following !== 'true';
@@ -115,16 +127,6 @@ function handleEraAction(action, button) {
     arcadeState.score += 10;
     arcadeState.finished = arcadeState.position === 9;
     renderArcade(arcadeState.finished ? 'COURSE CLEAR! New game to run it again.' : 'Nice run. Keep moving.');
-  }
-  if (action === 'comet-reset') {
-    document.querySelectorAll('[data-comet-tile]').forEach(tile => {
-      tile.disabled = false;
-      tile.classList.remove('found');
-      tile.textContent = Number(tile.getAttribute('aria-label').match(/\d+/)[0]) % 2 ? '✦' : '✧';
-    });
-    const tiles = [...document.querySelectorAll('[data-comet-tile]')];
-    document.querySelector('[data-comet-field]').dataset.cometTarget = String(Math.floor(Math.random() * tiles.length));
-    document.querySelector('[data-comet-message]').textContent = 'The telescope is ready. Find the comet!';
   }
   if (action === 'packet-reset') {
     packetState.path = ['A'];
@@ -191,24 +193,27 @@ document.addEventListener('click', event => {
   const actionButton = event.target.closest('[data-era-action]');
   if (actionButton) handleEraAction(actionButton.dataset.eraAction, actionButton);
 
-  const cometTile = event.target.closest('[data-comet-tile]');
-  if (cometTile && !cometTile.disabled) {
-    const tiles = [...document.querySelectorAll('[data-comet-tile]')];
-    const target = document.querySelector('[data-comet-field]').dataset.cometTarget;
-    const index = tiles.indexOf(cometTile);
-    if (target === undefined) document.querySelector('[data-comet-field]').dataset.cometTarget = String(Math.floor(Math.random() * tiles.length));
-    if (String(index) === document.querySelector('[data-comet-field]').dataset.cometTarget) {
-      cometTile.textContent = '☄';
-      cometTile.classList.add('found');
-      tiles.forEach(tile => { tile.disabled = true; });
-      document.querySelector('[data-comet-message]').textContent = 'Comet recovered! The guestbook is safe.';
-      const counter = document.querySelector('[data-visitor-count]');
-      counter.textContent = String(Number(counter.textContent) + 1).padStart(6, '0');
-    } else {
-      cometTile.textContent = '·';
-      cometTile.disabled = true;
-      document.querySelector('[data-comet-message]').textContent = 'Just a star. Keep looking.';
-    }
+  const themeButton = event.target.closest('[data-home-theme]');
+  if (themeButton) {
+    document.querySelectorAll('[data-home-theme]').forEach(button => {
+      const active = button === themeButton;
+      button.classList.toggle('active', active);
+      button.setAttribute('aria-pressed', String(active));
+    });
+    renderHomepage();
+  }
+  if (event.target.closest('[data-era-action="homepage-reset"]')) {
+    document.querySelector('#homepage-title').value = "Mira's Home Page";
+    document.querySelector('#homepage-intro').value = 'Moon sketches, mailing-list finds, and notes from late-night browsing.';
+    document.querySelector('#homepage-counter').checked = true;
+    document.querySelector('#homepage-marquee').checked = true;
+    document.querySelectorAll('[data-home-theme]').forEach(button => {
+      const active = button.dataset.homeTheme === 'blue';
+      button.classList.toggle('active', active);
+      button.setAttribute('aria-pressed', String(active));
+    });
+    document.querySelector('[data-builder-status]').textContent = 'Page settings reset.';
+    renderHomepage();
   }
 
   const nodeButton = event.target.closest('[data-packet-node]');
@@ -246,10 +251,17 @@ document.addEventListener('click', event => {
   }
 });
 
+document.addEventListener('input', event => {
+  if (event.target.closest('[data-homepage-builder]')) {
+    document.querySelector('[data-builder-status]').textContent = 'Preview updated.';
+    renderHomepage();
+  }
+});
+
 document.addEventListener('DOMContentLoaded', () => {
-  document.querySelector('[data-comet-field]').dataset.cometTarget = String(Math.floor(Math.random() * 9));
   renderArcade('Ready, player one? Run to move. Jump to clear gaps.');
   updateCardReadout();
   updatePacketStatus('READY AT NODE A');
   renderStory('root', []);
+  renderHomepage();
 });

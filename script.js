@@ -46,7 +46,7 @@ document.addEventListener('click', event => {
   if (event.target.closest('.close-modal') || event.target === backdrop) closeModal();
   if (event.target.closest('.submit-modal')) {
     const button = event.target.closest('.submit-modal');
-    button.innerHTML = 'SIGNAL RECEIVED <span>✓</span>';
+    button.innerHTML = 'REQUEST RECEIVED <span>✓</span>';
     button.style.background = 'var(--green)';
     window.setTimeout(closeModal, 900);
   }
@@ -63,9 +63,8 @@ if (commandInput) {
     if (event.key !== 'Enter') return;
     const command = commandInput.value.trim().toLowerCase();
     const responses = {
-      help: 'available: work, archive, status, clear, exit',
+      help: 'available: work, status, clear, exit',
       work: '07 projects found. routing to workshop...',
-      archive: '04 files recovered. routing to archive...',
       status: 'all systems nominal. sleep module: not found.',
       clear: ''
     };
@@ -73,7 +72,7 @@ if (commandInput) {
     if (command === 'clear') terminalOutput.innerHTML = '';
     else terminalOutput.innerHTML += `<br /><span class="orange-text">guest@jw1:~$ ${command}</span><br />${responses[command] || 'command not found. try <b>help</b>.'}`;
     commandInput.value = '';
-    if (command === 'work' || command === 'archive') {
+    if (command === 'work') {
       closeModal();
       window.location.hash = command;
       showPage(command);

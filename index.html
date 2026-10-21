@@ -3,10 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>jw1 // signal found</title>
+    <title>jw1 // workbench</title>
     <meta name="description" content="The personal arcade, workshop, and field notes of jw1." />
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="eras.css" />
+    <link rel="stylesheet" href="library-scene.css" />
+    <link rel="stylesheet" href="spectrum-walk.css" />
     <style>
       .strange-dock{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:0 0 36px;max-width:540px}
       .strange-link{position:relative;display:flex;flex-direction:column;justify-content:space-between;min-height:155px;padding:12px;background:#111521;border:1px solid var(--line);color:var(--ink);overflow:hidden;transition:.2s;box-shadow:4px 4px 0 #171d2c}
@@ -28,6 +30,8 @@
       .strange-label b{display:block;color:var(--ink);font-size:10px}
       .game-page{max-width:1180px}.game-heading{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:24px}.game-heading h1{margin:12px 0 0;font-size:clamp(36px,5vw,68px);line-height:.94;letter-spacing:-.06em}.game-heading p:last-child{max-width:300px;color:var(--muted);line-height:1.6}.game-shell{border:1px solid var(--line);background:#080b10;box-shadow:10px 10px 0 #121a28}.game-hud{display:flex;justify-content:space-between;gap:20px;padding:12px 15px;border-bottom:1px solid var(--line);font:10px 'DM Mono';color:var(--muted);letter-spacing:.08em}.game-hud b{color:var(--ink);font-weight:500}.game-view{position:relative;min-height:440px;overflow:hidden;display:grid;place-items:center;isolation:isolate}.game-controls{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:14px 15px;border-top:1px solid var(--line);font:10px 'DM Mono';color:var(--muted)}.game-button{background:none;border:1px solid currentColor;color:var(--orange);padding:9px 12px;font:10px 'DM Mono';letter-spacing:.08em}.game-button:hover,.game-button:focus-visible{background:var(--orange);color:#140f0c;outline:none}.vector-view{background:#020b0c;color:#7bffbe;perspective:560px}.vector-view:before{content:"";position:absolute;inset:0;background:linear-gradient(#021112 0 49%,#031719 50%);z-index:-2}.vector-grid{position:absolute;width:150%;height:100%;bottom:-45%;background:linear-gradient(90deg,transparent 49%,currentColor 50% 51%,transparent 52%) 0 0/11% 100%,linear-gradient(0deg,transparent 49%,currentColor 50% 51%,transparent 52%) 0 0/100% 12%;opacity:.28;transform:rotateX(62deg);transform-origin:bottom}.vector-gate{width:min(54vw,440px);height:275px;border:3px solid currentColor;clip-path:polygon(18% 0,82% 0,100% 100%,0 100%);box-shadow:0 0 35px #40e89b66, inset 0 0 28px #40e89b33;position:relative}.vector-gate:before,.vector-gate:after{content:"";position:absolute;border:2px solid currentColor;inset:22% 23% 0;clip-path:inherit;opacity:.75}.vector-gate:after{inset:42% 39% 0}.game-objective{position:absolute;top:28px;left:28px;font:11px 'DM Mono';letter-spacing:.08em}.game-objective b{display:block;margin-top:5px;font-size:16px}.pixel-view{background:#20100c;perspective:450px;color:#ffc24d}.pixel-view:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,#3c1c12 0 5px,#28120e 6px 11px);opacity:.78}.pixel-corridor{width:min(76vw,660px);height:430px;position:relative;transform:rotateX(4deg);background:linear-gradient(90deg,#110a0a 0 18%,transparent 18% 82%,#110a0a 82%),linear-gradient(#db6c2e 0 12%,#762d1e 12% 62%,#30212a 62%);clip-path:polygon(18% 0,82% 0,100% 100%,0 100%);border:5px solid #f09c3e;box-shadow:0 0 0 5px #3d1a13,inset 0 0 50px #170b0b}.pixel-corridor:before{content:"";position:absolute;inset:14% 38% 25%;background:repeating-linear-gradient(90deg,#722e1f 0 12px,#d65d28 12px 20px);border:4px solid #ffbc4a;box-shadow:0 0 0 4px #39140e}.pixel-orb{position:absolute;width:42px;height:42px;border-radius:50%;background:#e9d2a5;box-shadow:0 0 0 7px #7a2e1a,0 0 24px #ffbd45;left:calc(50% - 21px);top:45%;animation:orb-bob 2s steps(2) infinite}.neon-view{background:#071021;color:#51d9ff;perspective:600px}.neon-view:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 27%,#6c3aa855,transparent 27%),linear-gradient(#0a1128 0 49%,#100c2d 50%);z-index:-2}.neon-road{position:absolute;bottom:-39%;width:150%;height:88%;background:linear-gradient(90deg,transparent 49%,currentColor 50% 51%,transparent 52%) 0 0/10% 100%,linear-gradient(0deg,transparent 49%,currentColor 50% 51%,transparent 52%) 0 0/100% 12%;opacity:.38;transform:rotateX(63deg);transform-origin:bottom}.neon-portal{width:min(63vw,520px);height:290px;border:4px solid currentColor;clip-path:polygon(50% 0,100% 26%,86% 100%,14% 100%,0 26%);box-shadow:0 0 25px #45d9ff88,inset 0 0 32px #482da866;position:relative}.neon-portal:before{content:"";position:absolute;inset:19% 20%;border:3px solid #de7cff;clip-path:inherit;box-shadow:0 0 16px #de7cff}.neon-portal:after{content:"";position:absolute;width:24%;aspect-ratio:1;border:3px solid #f3d659;left:38%;top:40%;transform:rotate(45deg);box-shadow:0 0 18px #f3d659}@keyframes orb-bob{50%{transform:translateY(-9px)}}@media(max-width:620px){.game-heading{display:block}.game-view{min-height:330px}.game-controls{align-items:flex-start;flex-direction:column}.game-objective{top:17px;left:17px}.vector-gate,.pixel-corridor,.neon-portal{width:82vw}}
       @media(max-width:620px){.strange-dock{max-width:none}.strange-link{min-height:140px;padding:9px}.strange-icon{height:72px}.strange-icon svg{width:60px;height:60px}}
+      .library-page.page{z-index:11;background:#000}
+      .library-scene{background:#000}
     </style>
   </head>
   <body>
@@ -41,8 +45,6 @@
       <nav class="main-nav" aria-label="Main navigation">
         <a href="#work" data-route="work">work</a>
         <a href="#eras" data-route="eras">time machine</a>
-        <a href="#archive" data-route="archive">archive</a>
-        <a href="#transmissions" data-route="transmissions">transmissions</a>
       </nav>
       <div class="top-actions">
         <span class="status"><i></i> ONLINE</span>
@@ -132,23 +134,20 @@
             <div class="hero-actions">
               <a class="pixel-button" href="#work" data-route="work">EXPLORE THE WORK <span>→</span></a>
               <a class="eras-home-link" href="#eras" data-route="eras">BROWSE THE ERAS <span>↗</span></a>
+              <a class="library-entry" href="#library" data-route="library"><span aria-hidden="true">✦</span> ENTER THE LIBRARY <span aria-hidden="true">↗</span></a>
+              <a class="spectrum-entry" href="#spectrum" data-route="spectrum">WALK THE RAINBOW GRID <span aria-hidden="true">↗</span></a>
               <button class="text-button" data-modal="terminal-modal"><span class="play-icon">▶</span> open terminal</button>
-            </div>
-            <div class="hero-meta">
-              <span><b>07</b> active projects</span>
-              <span><b>03</b> field notes</span>
-              <span><b>∞</b> late nights</span>
             </div>
           </div>
           <div class="hero-art">
             <div class="art-frame">
-              <div class="frame-label">JW1 / SIGNAL-01</div>
+              <div class="frame-label">JW1 / WORKBENCH-01</div>
               <img src="source-images\xZyPn.jpg" alt="Pixel art JW1 circuit emblem" />
               <div class="frame-coordinates">34° 03' 08" N<br />118° 14' 37" W</div>
               <span class="crosshair one"></span><span class="crosshair two"></span>
             </div>
-            <div class="float-tag tag-a">NO. 001<br /><b>THE ARCHIVE</b></div>
-            <div class="float-tag tag-b">TRANSMISSION<br /><b>RECEIVED</b> ◉</div>
+            <div class="float-tag tag-a">NO. 001<br /><b>THE WORKBENCH</b></div>
+            <div class="float-tag tag-b">STATUS<br /><b>ONLINE</b> ◉</div>
           </div>
         </div>
         <div class="marquee"><span>RECENTLY UNEARTHED&nbsp;&nbsp; / &nbsp;&nbsp;JAMESTOWN&nbsp;&nbsp; / &nbsp;&nbsp;VOXON&nbsp;&nbsp; / &nbsp;&nbsp;TRAPPIST&nbsp;&nbsp; / &nbsp;&nbsp;KEEP LOOKING&nbsp;&nbsp; / &nbsp;&nbsp;</span></div>
@@ -175,11 +174,10 @@
       </section>
 
       <section class="page era-directory" id="eras-page" data-page="eras">
-        <div class="era-directory-head"><p class="eyebrow">05 / browser time machine</p><h1>Eight eras.<br /><em>Eight experiments.</em></h1><p>Travel through the web as it was, might have been, or was still waiting to be imagined.</p></div>
         <div class="era-directory-grid">
-          <a class="era-index era-index-2010" href="#era-2010" data-route="era-2010"><span>2010—2019 / SOCIAL WEB</span><b>Little Status</b><small>Post a thought to the live feed.</small><i>OPEN SIGNAL ↗</i></a>
+          <a class="era-index era-index-2010" href="#era-2010" data-route="era-2010"><span>2010—2019 / SOCIAL WEB</span><b>Little Status</b><small>Post a thought to the live feed.</small><i>OPEN FEED ↗</i></a>
           <a class="era-index era-index-2000" href="#era-2000" data-route="era-2000"><span>2000—2009 / ARCADE PORTAL</span><b>Pixel Sprint</b><small>Run, jump, and make the high score.</small><i>INSERT COIN ↗</i></a>
-          <a class="era-index era-index-1990" href="#era-1990" data-route="era-1990"><span>1990—1999 / PERSONAL HOMEPAGE</span><b>Comet Club</b><small>Find the runaway guestbook comet.</small><i>ENTER SITE ↗</i></a>
+          <a class="era-index era-index-1990" href="#era-1990" data-route="era-1990"><span>1990—1999 / PERSONAL HOMEPAGE</span><b>Home Page Maker</b><small>Build a tiny page with your own colors and quirks.</small><i>ENTER SITE ↗</i></a>
           <a class="era-index era-index-1980" href="#era-1980" data-route="era-1980"><span>1980—1989 / BULLETIN BOARD</span><b>Night Terminal</b><small>Find the right frequency and unlock the board.</small><i>DIAL IN ↗</i></a>
           <a class="era-index era-index-1970" href="#era-1970" data-route="era-1970"><span>1970—1979 / PACKET NETWORK</span><b>Route 04</b><small>Carry a message across a fragile network.</small><i>TRACE ROUTE ↗</i></a>
           <a class="era-index era-index-1960" href="#era-1960" data-route="era-1960"><span>1960—1969 / HYPERTEXT DREAM</span><b>Memex Garden</b><small>Follow a chain of linked ideas.</small><i>FOLLOW A LINK ↗</i></a>
@@ -203,12 +201,12 @@
 
       <section class="page era-page era-1990" data-page="era-1990">
         <a class="era-back" href="#eras" data-route="eras">← BACK TO THE DIRECTORY</a>
-        <div class="home-page-frame"><header class="home-page-header"><span>✦ WELCOME TO ✦</span><h1>THE COMET CLUB</h1><p>EST. 1997　|　BEST VIEWED AT 800 × 600</p></header><div class="home-page-columns"><aside class="webring"><b>LINK RING</b><p>← previous</p><p>random site</p><p>next →</p><hr /><b>VISITORS</b><div class="visitor-count" data-visitor-count>000173</div><p>you are visitor #173!</p></aside><div class="comet-content"><h2>Greetings, earthling!</h2><p>This page is under perpetual construction. A comet escaped from the guestbook and is hiding in one of these star fields. Click around and help bring it home.</p><div class="star-field" data-comet-field aria-label="Comet search grid"><button type="button" data-comet-tile aria-label="Search star 1">✦</button><button type="button" data-comet-tile aria-label="Search star 2">✧</button><button type="button" data-comet-tile aria-label="Search star 3">✦</button><button type="button" data-comet-tile aria-label="Search star 4">✧</button><button type="button" data-comet-tile aria-label="Search star 5">✦</button><button type="button" data-comet-tile aria-label="Search star 6">✧</button><button type="button" data-comet-tile aria-label="Search star 7">✦</button><button type="button" data-comet-tile aria-label="Search star 8">✧</button><button type="button" data-comet-tile aria-label="Search star 9">✦</button></div><p class="comet-message" data-comet-message aria-live="polite">The telescope is ready. Find the comet!</p><button class="comet-reset" type="button" data-era-action="comet-reset">RESET TELESCOPE</button><div class="guestbook-strip">SIGN MY GUESTBOOK　✉　EMAIL ME　★　TAKE MY WEBRING BADGE</div></div></div><footer class="home-page-footer">Made with care and too many animated GIFs　|　No frames were harmed</footer></div>
+        <div class="home-page-frame"><header class="home-page-header"><span>PERSONAL HOMEPAGE CONSTRUCTOR / 1998</span><h1>MAKE A LITTLE WEB</h1><p>YOUR CORNER OF THE INTERNET　|　SAVE OFTEN</p></header><div class="home-page-columns homepage-maker"><form class="homepage-builder" data-homepage-builder><h2>PAGE SETTINGS</h2><label for="homepage-title">YOUR PAGE TITLE</label><input id="homepage-title" type="text" maxlength="32" value="Mira's Home Page" /><label for="homepage-intro">WELCOME MESSAGE</label><textarea id="homepage-intro" maxlength="140">Moon sketches, mailing-list finds, and notes from late-night browsing.</textarea><fieldset><legend>WALLPAPER COLOR</legend><div class="theme-options"><button type="button" class="theme-swatch active" data-home-theme="blue" aria-label="Blue wallpaper" aria-pressed="true"></button><button type="button" class="theme-swatch" data-home-theme="orchid" aria-label="Orchid wallpaper" aria-pressed="false"></button><button type="button" class="theme-swatch" data-home-theme="mint" aria-label="Mint wallpaper" aria-pressed="false"></button></div></fieldset><label class="builder-check"><input type="checkbox" id="homepage-counter" checked /> Show visitor counter</label><label class="builder-check"><input type="checkbox" id="homepage-marquee" checked /> Add scrolling marquee</label><button type="button" class="builder-reset" data-era-action="homepage-reset">RESET PAGE</button><p class="builder-note" aria-live="polite" data-builder-status>Changes appear in your preview.</p></form><article class="homepage-preview" data-home-preview data-theme="blue"><div class="preview-browser"><span>● ● ●</span><b>http://my.homepage.net/</b><span>_ □ ×</span></div><header class="preview-site-head"><span>✦ WELCOME TO ✦</span><h2 data-preview-title>Mira's Home Page</h2></header><div class="preview-marquee" data-preview-marquee><span>MOON SKETCHES　★　NEW LINKS　★　COME ON IN　★　</span></div><div class="preview-site-body"><p data-preview-copy>Moon sketches, mailing-list finds, and notes from late-night browsing.</p><div class="preview-stamp">UNDER CONSTRUCTION</div><div class="preview-counter" data-preview-counter>VISITORS: 000173</div><div class="preview-links"><span>MY LINKS</span><a href="#guestbook">guestbook</a><a href="#email">email me</a><a href="#links">cool sites</a></div></div><footer>Made with care and a little HTML</footer></article></div></div>
       </section>
 
       <section class="page era-page era-1980" data-page="era-1980">
         <a class="era-back" href="#eras" data-route="eras">← EXIT TO THE DIRECTORY</a>
-        <div class="bbs-heading"><span>MODEM LINK / 2400 BAUD</span><b>OPEN ACCESS NODE</b></div><div class="bbs-screen"><div class="bbs-logo">NIGHT<br />TERMINAL</div><p>╔══════════════════════════════════════════════╗<br />║　WELCOME, TRAVELER. ONE BOARD IS WAITING.　║<br />╚══════════════════════════════════════════════╝</p><p data-bbs-output aria-live="polite">The signal is weak. Scan the line, tune to the board's frequency, then open the connection.<br />Type <b>HELP</b> if you need the command list.</p><form class="bbs-input" data-era-form="bbs"><label for="bbs-command">GUEST@NIGHTBBS:~$</label><input id="bbs-command" name="command" autocomplete="off" placeholder="type a command" /><button type="submit">SEND</button></form><div class="bbs-status"><span>NODE: 03</span><span>USERS ONLINE: 04</span><span>LINE NOISE: LOW</span></div></div>
+        <div class="bbs-heading"><span>MODEM LINK / 2400 BAUD</span><b>OPEN ACCESS NODE</b></div><div class="bbs-screen"><div class="bbs-logo">NIGHT<br />TERMINAL</div><p>╔══════════════════════════════════════════════╗<br />║　WELCOME, TRAVELER. ONE BOARD IS WAITING.　║<br />╚══════════════════════════════════════════════╝</p><p data-bbs-output aria-live="polite">The carrier is weak. Scan the line, tune to the board's frequency, then open the connection.<br />Type <b>HELP</b> if you need the command list.</p><form class="bbs-input" data-era-form="bbs"><label for="bbs-command">GUEST@NIGHTBBS:~$</label><input id="bbs-command" name="command" autocomplete="off" placeholder="type a command" /><button type="submit">SEND</button></form><div class="bbs-status"><span>NODE: 03</span><span>USERS ONLINE: 04</span><span>LINE NOISE: LOW</span></div></div>
       </section>
 
       <section class="page era-page era-1970" data-page="era-1970">
@@ -231,50 +229,59 @@
         <div class="rotor-heading"><span>FIELD MESSAGE SERVICE / FICTIONAL 1943</span><h1>ROTOR<br />ROOM</h1><p>A mechanical cipher, reimagined as a tiny communication network.</p></div><div class="rotor-machine"><div class="rotor-top"><span>INPUT DRUM</span><span>OUTPUT TAPE</span></div><div class="rotor-body"><label for="rotor-message">MESSAGE TO ENCODE<input id="rotor-message" type="text" value="MEET AT THE LIGHTHOUSE" maxlength="60" /></label><div class="rotor-setting"><label for="rotor-shift">ROTOR SETTING</label><input id="rotor-shift" type="number" min="1" max="25" value="3" /><span>CLICK / STEP</span></div><button type="button" data-era-action="encode-message">TURN THE WHEELS →</button><div class="rotor-output"><span>ENCODED MESSAGE</span><b data-rotor-output aria-live="polite">PRESSURE TAPE AWAITS</b></div></div><p class="rotor-note">For play, not secrecy: this simple letter shift is not secure encryption.</p></div>
       </section>
 
-      <section class="page" id="work-page" data-page="work">
-        <div class="page-heading"><p class="eyebrow">02 / the workshop</p><h1>Everything is<br /><em>in progress.</em></h1><p>A catalog of experiments, shipped artifacts, and things that are still blinking in the dark.</p></div>
-        <div class="filter-row"><span class="filter-label">FILTER BY /</span><button class="filter active">ALL <b>07</b></button><button class="filter">GAMES <b>03</b></button><button class="filter">TOOLS <b>02</b></button><button class="filter">WORLDS <b>02</b></button></div>
-        <div class="project-grid all-projects">
-          <article class="project-card accent-orange large-card"><div class="card-top"><span class="project-index">01</span><span class="project-type">GAME / IN DEV</span></div><div class="project-visual visual-jamestown"><span>JAMESTOWN</span><i>✦</i></div><div class="card-content"><h3>Jamestown</h3><p>Something arrived before we did.</p><button class="inline-button" data-modal="project-modal">inspect signal →</button></div></article>
-          <article class="project-card accent-blue large-card"><div class="card-top"><span class="project-index">02</span><span class="project-type">GAME / PROTOTYPE</span></div><div class="project-visual visual-voxon"><span>VOXON</span><i>+</i></div><div class="card-content"><h3>Voxon</h3><p>Defend the edge of the known universe.</p><button class="inline-button" data-modal="project-modal">inspect signal →</button></div></article>
-          <article class="project-card accent-purple large-card"><div class="card-top"><span class="project-index">03</span><span class="project-type">TOOL / PRIVATE</span></div><div class="project-visual visual-trappist"><span>TRAPPIST</span><i>◌</i></div><div class="card-content"><h3>Trappist</h3><p>Notes for building better small things.</p><button class="inline-button" data-modal="project-modal">inspect signal →</button></div></article>
-          <article class="project-card accent-green large-card"><div class="card-top"><span class="project-index">04</span><span class="project-type">WORLD / CONCEPT</span></div><div class="project-visual visual-afterlight"><span>AFTERLIGHT</span><i>☼</i></div><div class="card-content"><h3>Afterlight</h3><p>A city that only exists at 03:17.</p><button class="inline-button" data-modal="project-modal">inspect signal →</button></div></article>
-          <article class="project-card accent-pink large-card"><div class="card-top"><span class="project-index">05</span><span class="project-type">TOOL / MAKING</span></div><div class="project-visual visual-ghost"><span>GHOST//KEY</span><i>⌁</i></div><div class="card-content"><h3>Ghost//Key</h3><p>Leave a message for your future self.</p><button class="inline-button" data-modal="project-modal">inspect signal →</button></div></article>
-          <article class="project-card accent-yellow large-card"><div class="card-top"><span class="project-index">06</span><span class="project-type">GAME / SKETCH</span></div><div class="project-visual visual-orbit"><span>ORBITAL 9</span><i>◉</i></div><div class="card-content"><h3>Orbital 9</h3><p>One station. Nine bad decisions.</p><button class="inline-button" data-modal="project-modal">inspect signal →</button></div></article>
+      <section class="page library-page" data-page="library">
+        <div class="library-scene" id="library-scene" tabindex="0" aria-label="Interactive 3D scene. Drag to tilt; use W and S or scroll to fly through the nested tesseracts."></div>
+        <div class="library-overlay">
+          <a class="library-exit" href="#home" data-route="home" aria-label="Return to home" title="Return to home">←</a>
+          <div class="library-title"><span>JW1 / CHAMBER 04</span></div>
+          <button class="library-reset" type="button" data-library-reset aria-label="Reset view" title="Reset view">⟲</button>
+          <span class="library-coordinate">ROOM 04 <i>●</i> OPEN</span>
+        </div>
+        <p class="library-status" data-library-status aria-live="polite">A room folded through itself.</p>
+      </section>
+
+      <section class="page spectrum-page" data-page="spectrum">
+        <div class="spectrum-world" id="spectrum-world" role="img" aria-label="First-person view into a black corridor made entirely from rainbow cycling lines"></div>
+        <div class="spectrum-overlay">
+          <a class="spectrum-back" href="#home" data-route="home" aria-label="Return home" title="Return home">←</a>
+          <div class="spectrum-heading"><span>JW1 / WALK MODE</span><h1>CHROMATIC WALK</h1></div>
+          <button class="spectrum-start" type="button" data-walk-start>START WALK</button>
+          <a class="spectrum-tesseracts" href="#library" data-route="library">TESSERACT VIEW</a>
+          <div class="walk-pad" aria-label="Movement controls">
+            <button type="button" data-walk-move="forward" aria-label="Move forward">↑</button>
+            <button type="button" data-walk-move="left" aria-label="Move left">←</button>
+            <button type="button" data-walk-move="back" aria-label="Move backward">↓</button>
+            <button type="button" data-walk-move="right" aria-label="Move right">→</button>
+          </div>
+          <span class="spectrum-status" data-walk-status aria-live="polite">WASD to move. Drag to look around.</span>
         </div>
       </section>
 
-      <section class="page" id="archive-page" data-page="archive">
-        <div class="page-heading split-heading"><div><p class="eyebrow">03 / recovered files</p><h1>The<br /><em>archive.</em></h1></div><img src="source-images\l4YUV.jpg" alt="JW1 pixel art border" /></div>
-        <div class="archive-layout"><div class="archive-list">
-          <button class="archive-item active"><span>1997.04.12</span><b>the first boot</b><i>↗</i></button>
-          <button class="archive-item"><span>2004.11.08</span><b>notes from a long night</b><i>↗</i></button>
-          <button class="archive-item"><span>2011.06.30</span><b>an index of small worlds</b><i>↗</i></button>
-          <button class="archive-item"><span>2026.10.10</span><b>signal found</b><i>↗</i></button>
-        </div><div class="archive-detail"><span class="stamp">RECOVERED / FILE 001</span><h2>The first boot</h2><p>There was a blinking cursor, an empty directory, and a very good reason to keep going. The rest is classified as “probably a bug.”</p><div class="detail-line"><span>FORMAT</span><b>plain text / 4 kb</b></div><div class="detail-line"><span>STATUS</span><b class="orange-text">still compiling</b></div><button class="pixel-button" data-modal="archive-modal">READ FILE <span>→</span></button></div></div>
+      <section class="page" id="work-page" data-page="work">
+        <div class="filter-row"><span class="filter-label">FILTER BY /</span><button class="filter active">ALL <b>07</b></button><button class="filter">GAMES <b>03</b></button><button class="filter">TOOLS <b>02</b></button><button class="filter">WORLDS <b>02</b></button></div>
+        <div class="project-grid all-projects">
+          <article class="project-card accent-orange large-card"><div class="card-top"><span class="project-index">01</span><span class="project-type">GAME / IN DEV</span></div><div class="project-visual visual-jamestown"><span>JAMESTOWN</span><i>✦</i></div><div class="card-content"><h3>Jamestown</h3><p>Something arrived before we did.</p><button class="inline-button" data-modal="project-modal">view project →</button></div></article>
+          <article class="project-card accent-blue large-card"><div class="card-top"><span class="project-index">02</span><span class="project-type">GAME / PROTOTYPE</span></div><div class="project-visual visual-voxon"><span>VOXON</span><i>+</i></div><div class="card-content"><h3>Voxon</h3><p>Defend the edge of the known universe.</p><button class="inline-button" data-modal="project-modal">view project →</button></div></article>
+          <article class="project-card accent-purple large-card"><div class="card-top"><span class="project-index">03</span><span class="project-type">TOOL / PRIVATE</span></div><div class="project-visual visual-trappist"><span>TRAPPIST</span><i>◌</i></div><div class="card-content"><h3>Trappist</h3><p>Notes for building better small things.</p><button class="inline-button" data-modal="project-modal">view project →</button></div></article>
+          <article class="project-card accent-green large-card"><div class="card-top"><span class="project-index">04</span><span class="project-type">WORLD / CONCEPT</span></div><div class="project-visual visual-afterlight"><span>AFTERLIGHT</span><i>☼</i></div><div class="card-content"><h3>Afterlight</h3><p>A city that only exists at 03:17.</p><button class="inline-button" data-modal="project-modal">view project →</button></div></article>
+          <article class="project-card accent-pink large-card"><div class="card-top"><span class="project-index">05</span><span class="project-type">TOOL / MAKING</span></div><div class="project-visual visual-ghost"><span>GHOST//KEY</span><i>⌁</i></div><div class="card-content"><h3>Ghost//Key</h3><p>Leave a message for your future self.</p><button class="inline-button" data-modal="project-modal">view project →</button></div></article>
+          <article class="project-card accent-yellow large-card"><div class="card-top"><span class="project-index">06</span><span class="project-type">GAME / SKETCH</span></div><div class="project-visual visual-orbit"><span>ORBITAL 9</span><i>◉</i></div><div class="card-content"><h3>Orbital 9</h3><p>One station. Nine bad decisions.</p><button class="inline-button" data-modal="project-modal">view project →</button></div></article>
+        </div>
       </section>
 
-      <section class="page" id="transmissions-page" data-page="transmissions">
-        <div class="page-heading"><p class="eyebrow">04 / from the desk</p><h1>Incoming<br /><em>transmissions.</em></h1><p>Occasional signals from the workshop. No schedule. No promises.</p></div>
-        <div class="transmission-layout"><div class="transmission-list">
-          <article><span class="trans-date">10.10.26</span><div><h3>Signal found</h3><p>The doors are open. The lights are on. Something is moving in Jamestown.</p><a href="#" class="arrow-link">read transmission ↗</a></div><span class="trans-kind">FIELD NOTE</span></article>
-          <article><span class="trans-date">08.29.26</span><div><h3>On making tiny universes</h3><p>Some thoughts on scope, stars, and the joy of a one-screen game.</p><a href="#" class="arrow-link">read transmission ↗</a></div><span class="trans-kind">ESSAY</span></article>
-          <article><span class="trans-date">05.17.26</span><div><h3>Voxon // build 04</h3><p>New enemies. New soundtrack. Same impossible odds.</p><a href="#" class="arrow-link">read transmission ↗</a></div><span class="trans-kind">DEVLOG</span></article>
-        </div><aside class="radio-card"><div class="radio-top"><span>JW1 RADIO</span><span class="live-dot">● LIVE</span></div><div class="waveform"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><h3>late night frequency</h3><p>03:17 — 04:44</p><button class="pixel-button full" data-modal="radio-modal">TUNE IN <span>▶</span></button></aside></div>
-      </section>
     </main>
 
-    <footer><span>© jw1 / all signals reserved</span><span>built in the in-between <b>✦</b></span><a href="#home" data-route="home">back to top ↑</a></footer>
+    <footer><span>© jw1 / all rights reserved</span><span>built in the in-between <b>✦</b></span><a href="#home" data-route="home">back to top ↑</a></footer>
 
     <div class="modal-backdrop" id="modal-backdrop" hidden>
-      <div class="modal" id="member-modal" role="dialog" aria-modal="true" aria-labelledby="member-title"><button class="close-modal" aria-label="Close">×</button><p class="eyebrow">JW1 / PRIVATE NODE</p><h2 id="member-title">Enter the<br /><em>workshop.</em></h2><p class="modal-copy">A quiet corner for build notes, strange links, and early access.</p><label>HANDLE<input type="text" placeholder="your alias"></label><label>PASSCODE<input type="password" placeholder="••••••••"></label><button class="pixel-button full submit-modal">ACCESS NODE <span>→</span></button><p class="modal-foot">No account? <button data-modal="register-modal">request an invite</button></p></div>
-      <div class="modal" id="register-modal" role="dialog" aria-modal="true" aria-labelledby="register-title"><button class="close-modal" aria-label="Close">×</button><p class="eyebrow">JW1 / NEW SIGNAL</p><h2 id="register-title">Leave a<br /><em>trace.</em></h2><p class="modal-copy">Drop a handle. The rest can stay mysterious.</p><label>HANDLE<input type="text" placeholder="choose wisely"></label><label>FREQUENCY<input type="email" placeholder="you@somewhere.net"></label><button class="pixel-button full submit-modal">SEND REQUEST <span>↗</span></button><p class="modal-foot">Already in the loop? <button data-modal="member-modal">log in</button></p></div>
+      <div class="modal" id="member-modal" role="dialog" aria-modal="true" aria-label="Log in"><button class="close-modal" aria-label="Close">×</button><label>USERNAME<input type="text" autocomplete="username" placeholder="your username"></label><label>PASSWORD<input type="password" autocomplete="current-password" placeholder="your password"></label><button class="pixel-button full submit-modal">LOG IN <span>→</span></button><p class="modal-foot">Need an account? <button data-modal="register-modal">request an account</button></p></div>
+      <div class="modal" id="register-modal" role="dialog" aria-modal="true" aria-labelledby="register-title"><button class="close-modal" aria-label="Close">×</button><p class="eyebrow">JW1 / NEW ACCOUNT</p><h2 id="register-title">Leave a<br /><em>trace.</em></h2><p class="modal-copy">Drop a handle. The rest can stay mysterious.</p><label>USERNAME<input type="text" autocomplete="username" placeholder="choose a username"></label><label>EMAIL<input type="email" autocomplete="email" placeholder="you@somewhere.net"></label><button class="pixel-button full submit-modal">CREATE ACCOUNT <span>↗</span></button><p class="modal-foot">Already have an account? <button data-modal="member-modal">log in</button></p></div>
       <div class="modal terminal-modal" id="terminal-modal" role="dialog" aria-modal="true" aria-labelledby="terminal-title"><button class="close-modal" aria-label="Close">×</button><div class="terminal-head"><span><i></i><i></i><i></i></span><b id="terminal-title">jw1@node:~</b></div><div class="terminal-output">JW1 OS [version 1.0.97]<br />All systems nominal.<br /><br /><span class="orange-text">hint:</span> type <b>help</b> to see available commands.</div><div class="terminal-input"><span>guest@jw1:~$</span><input id="terminal-command" autocomplete="off" autofocus /></div></div>
       <div class="modal project-modal" id="project-modal" role="dialog" aria-modal="true" aria-labelledby="project-title"><button class="close-modal" aria-label="Close">×</button><p class="eyebrow" id="project-file-label">PROJECT FILE / 001</p><h2 id="project-title">Jamestown</h2><p class="modal-copy" id="project-copy">A strange little game about a place that appears on no map. Explore. Listen. Don't follow the lights.</p><div class="detail-line"><span>TYPE</span><b id="project-category">GAME</b></div><div class="detail-line"><span>STATUS</span><b class="orange-text" id="project-status">IN DEV</b></div><button class="pixel-button full submit-modal">NOTIFY ME <span>↗</span></button></div>
-      <div class="modal archive-modal" id="archive-modal" role="dialog" aria-modal="true" aria-labelledby="archive-title"><button class="close-modal" aria-label="Close">×</button><p class="eyebrow">RECOVERED FILE / 001</p><h2 id="archive-title">The first boot</h2><div class="file-paper"><p>&gt; booting jw1_node...</p><p>&gt; loading impossible_ideas.dll</p><p>&gt; warning: sleep module not found</p><p>&gt; continuing anyway.</p><br /><p>Some projects begin with a plan. This one began with a blinking cursor and a question that refused to go away.</p></div></div>
-      <div class="modal radio-modal" id="radio-modal" role="dialog" aria-modal="true" aria-labelledby="radio-title"><button class="close-modal" aria-label="Close">×</button><p class="eyebrow">JW1 RADIO / 03:17</p><h2 id="radio-title">Frequency<br /><em>connected.</em></h2><div class="big-wave">∿ ∿ ∿ ∿ ∿ ∿ ∿</div><p class="modal-copy">The signal is coming through. Keep this tab open and listen closely.</p><button class="pixel-button full submit-modal">DISCONNECT <span>■</span></button></div>
     </div>
     <script src="script.js"></script>
     <script src="eras.js"></script>
+    <script type="module" src="library-scene.js?v=2"></script>
+    <script type="module" src="spectrum-walk.js"></script>
   </body>
 </html>

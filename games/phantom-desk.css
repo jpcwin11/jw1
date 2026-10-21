@@ -390,14 +390,14 @@
   color: #b182ff;
 }
 
-/* SIGNAL */
-.pd-signal-wrap {
+/* RADIO */
+.pd-radio-wrap {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.pd-signal-canvas {
+.pd-radio-canvas {
   width: 100%;
   height: 120px;
   border: 1px solid #252d42;
@@ -405,14 +405,14 @@
   image-rendering: pixelated;
 }
 
-.pd-signal-text {
+.pd-radio-text {
   font-size: 10px;
   color: #51d9ff;
   min-height: 2.8em;
   text-shadow: 0 0 8px #51d9ff44;
 }
 
-.pd-signal-meter {
+.pd-radio-meter {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -420,14 +420,14 @@
   color: #6a7488;
 }
 
-.pd-signal-bar {
+.pd-radio-bar {
   flex: 1;
   height: 6px;
   background: #252d42;
   overflow: hidden;
 }
 
-.pd-signal-bar i {
+.pd-radio-bar i {
   display: block;
   height: 100%;
   width: 40%;

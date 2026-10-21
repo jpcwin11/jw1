@@ -5,7 +5,7 @@
     notes: { label: 'NOTES', glyph: '📝', title: 'NOTES.TXT — recovered', w: 300, h: 240, x: 48, y: 52 },
     clock: { label: 'CLOCK', glyph: '🕐', title: 'CLOCK.EXE', w: 260, h: 200, x: 130, y: 88 },
     trash: { label: 'TRASH', glyph: '🗑', title: 'RECYCLE BIN', w: 320, h: 280, x: 200, y: 120 },
-    signal: { label: 'SIGNAL', glyph: '📡', title: 'SIGNAL // JW1-03', w: 340, h: 260, x: 72, y: 160 },
+    radio: { label: 'RADIO', glyph: '📻', title: 'RADIO // JW1-03', w: 340, h: 260, x: 72, y: 160 },
   };
 
   const WIN_PHRASE = 'still here';
@@ -35,7 +35,7 @@
     const openWindows = new Map();
     const timeouts = [];
     const intervals = [];
-    let signalRaf = 0;
+    let radioRaf = 0;
     let dragState = null;
 
     const desktop = el('div', 'pd-desktop');
@@ -121,7 +121,7 @@
 <p>check the bin. something you wrote is still in there.</p>
 <hr />
 <p>03:17 — clock stuck again</p>
-<p>signal keeps asking if anyone is listening.</p>
+<p>the radio keeps asking if anyone is listening.</p>
 <p>type it back.</p>`
       );
     }
@@ -164,7 +164,7 @@
           'ul',
           'pd-trash-list',
           `<li>readme_old.txt</li>
-<li>draft_signal.log</li>
+<li>draft_radio.log</li>
 <li>last_words.tmp</li>`
         )
       );
@@ -204,16 +204,16 @@
       return wrap;
     }
 
-    function buildSignalBody() {
-      const wrap = el('div', 'pd-signal-wrap');
-      const canvas = el('canvas', 'pd-signal-canvas');
+    function buildRadioBody() {
+      const wrap = el('div', 'pd-radio-wrap');
+      const canvas = el('canvas', 'pd-radio-canvas');
       canvas.width = 280;
       canvas.height = 120;
-      const text = el('div', 'pd-signal-text', 'tuning…');
+      const text = el('div', 'pd-radio-text', 'scanning…');
       const meter = el(
         'div',
-        'pd-signal-meter',
-        '<span>STRENGTH</span><div class="pd-signal-bar"><i></i></div>'
+        'pd-radio-meter',
+        '<span>STRENGTH</span><div class="pd-radio-bar"><i></i></div>'
       );
       wrap.append(canvas, text, meter);
 
@@ -249,7 +249,7 @@
         ctx.putImageData(imageData, 0, 0);
         ctx.fillStyle = '#51d9ff22';
         ctx.fillRect(0, h * 0.4 + Math.random() * 20, w, 2);
-        signalRaf = window.requestAnimationFrame(drawStatic);
+        radioRaf = window.requestAnimationFrame(drawStatic);
       }
       drawStatic();
 
@@ -260,15 +260,15 @@
       notes: buildNotesBody,
       clock: buildClockBody,
       trash: buildTrashBody,
-      signal: buildSignalBody,
+      radio: buildRadioBody,
     };
 
     function triggerWin() {
       if (won) return;
       won = true;
-      if (signalRaf) window.cancelAnimationFrame(signalRaf);
+      if (radioRaf) window.cancelAnimationFrame(radioRaf);
       victory.innerHTML = `<div class="pd-victory-card">
-<h2>SIGNAL ACKNOWLEDGED</h2>
+<h2>CONNECTION ESTABLISHED</h2>
 <p>You typed it back. The desk exhales. Something that was deleted is still here.</p>
 </div>`;
       victory.hidden = false;
@@ -409,7 +409,7 @@
       intervals.forEach(id => window.clearInterval(id));
       timeouts.length = 0;
       intervals.length = 0;
-      if (signalRaf) window.cancelAnimationFrame(signalRaf);
+      if (radioRaf) window.cancelAnimationFrame(radioRaf);
       dragState = null;
       rootEl.innerHTML = '';
       rootEl.classList.remove('pd-mount');
